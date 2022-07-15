@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const style = {
   wrapper: "text-[#FFF4ED]",
-  heading:'text-4xl md:text-4xl my-3',
+  heading:'text-4xl md:text-4xl my-3 text-center md:text-left',
   cardContainer:'flex flex-col',
   card:'rounded-lg px-8 py-2 my-3 mx-3 flex items-center justify-center bg-neutral-800',
   smallHeading:'text-2xl md:text-2xl flex-1',

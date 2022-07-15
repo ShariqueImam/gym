@@ -15,7 +15,7 @@ const style = {
   para: "text-sm text-center md:text-left",
   allow: "hidden md:flex flex-col ",
   allow1: "flex items-center my-4 w-[90%] md:w-[70%]",
-  allowSmall: "flex md:hidden flex-col ",
+  allowSmall: "flex md:hidden flex-col p-4",
   checkbox: "bg-transparent accent-orange-600  a mx-3",
   recommend: "text-xs text-stone-400 my-2",
 };
