@@ -2,6 +2,7 @@ import React from "react";
 import Goal from "./Goal";
 import { Switch } from "pretty-checkbox-react";
 import "@djthoms/pretty-checkbox";
+import {motion } from 'framer-motion'
 
 const style = {
   wrapper:
@@ -19,11 +20,24 @@ const style = {
   recommend: "text-xs text-stone-400 my-2",
 };
 const Home = () => {
+  const container = {
+    hidden: { opacity:0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.3,
+        },
+    },
+}
+
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
 
   return (
-    <div className={style.wrapper}>
+    <motion.div className={style.wrapper}  variants={container}
+    initial="hidden"
+    animate="show">
       <div className={style.left}>
         <div className={style.tag}>
           <h2 className={style.heading} style={{fontFamily:'Yeseva One, cursive'}}>BUILD YOUR PERFECT BODY</h2>
@@ -37,6 +51,7 @@ const Home = () => {
               shape="slim"
               state={checked1}
               setState={setChecked1}
+              onClick={() => setChecked1((prev) => !prev)} 
             ></Switch>{" "}
             <div onClick={() => setChecked1((prev) => !prev)} className="mx-4">
               By continuing, I agree with{" "}
@@ -68,6 +83,7 @@ const Home = () => {
               shape="slim"
               state={checked2}
               setState={setChecked2}
+              onClick={() => setChecked2((prev) => !prev)}
             ></Switch>
             <div onClick={() => setChecked2((prev) => !prev)} className="mx-4">
               {" "}
@@ -93,6 +109,7 @@ const Home = () => {
               shape="slim"
               state={checked1}
               setState={setChecked1}
+              onClick={() => setChecked1((prev) => !prev)}
             ></Switch>{" "}
             <div onClick={() => setChecked1((prev) => !prev)} className="mx-4">
               By continuing, I agree with{" "}
@@ -124,6 +141,7 @@ const Home = () => {
               shape="slim"
               state={checked2}
               setState={setChecked2}
+              onClick={() => setChecked2((prev) => !prev)}
             ></Switch>
             <div onClick={() => setChecked2((prev) => !prev)} className="mx-4">
               {" "}
@@ -138,7 +156,7 @@ const Home = () => {
         
          
       </div>
-    </div>
+    </motion.div>
   );
 };
 
