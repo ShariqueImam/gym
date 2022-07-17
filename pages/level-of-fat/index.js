@@ -11,7 +11,7 @@ const style = {
   wrapper: "flex flex-col md:flex-row",
   left: "w-[100%] md:w-[50%] flex items-center justify-center",
   right:
-    "w-[100%] md:w-[50%] bg-neutral-900 h-[90vh] flex items-center justify-start md:px-8 lg:p-24",
+    "w-[100%] md:w-[50%] bg-neutral-900 h-[50vh] md:h-[90vh] flex items-center justify-start md:px-8 lg:p-24",
 };
 
 const LevelOfFat = () => {
