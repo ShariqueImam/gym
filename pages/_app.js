@@ -28,3 +28,8 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+export const getStaticProps = async () => {
+  return {
+    props: {},
+  };
+};

@@ -3,7 +3,7 @@ import Goal from "./Goal";
 import { Switch } from "pretty-checkbox-react";
 import "@djthoms/pretty-checkbox";
 import {motion } from 'framer-motion'
-
+import {Button} from '../UI/Button'
 const style = {
   wrapper:
     " w-[95%] md:w-[80%] lg:w-[70%] mx-auto my-12 flex flex-col md:flex-row text-[#FFF4ED] ",
@@ -39,6 +39,7 @@ const Home = () => {
     initial="hidden"
     animate="show">
       <div className={style.left}>
+     
         <div className={style.tag}>
           <h2 className={style.heading} style={{fontFamily:'Yeseva One, cursive'}}>BUILD YOUR PERFECT BODY</h2>
           <p className={style.para} style={{fontFamily:'Poppins, sans-serif'}}>Get a personalized workout program</p>
