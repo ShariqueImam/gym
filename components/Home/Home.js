@@ -2,8 +2,7 @@ import React from "react";
 import Goal from "./Goal";
 import { Switch } from "pretty-checkbox-react";
 import "@djthoms/pretty-checkbox";
-import {motion } from 'framer-motion'
-import {Button} from '../UI/Button'
+import Link from "next/link";
 // text-[#FFF4ED]
 const style = {
   wrapper:
@@ -55,25 +54,35 @@ const Home = () => {
             ></Switch>{" "}
             <div onClick={() => setChecked1((prev) => !prev)} className="mx-4">
               By continuing, I agree with{" "}
+              <Link href="/info/terms">
               <span className="text-orange-600 cursor-pointer">
                 Terms of service
-              </span>{" "}
+              </span>
+              </Link>
               ,{" "}
+              <Link href="/info/privacy">
               <span className="text-orange-600 cursor-pointer">
                 Privacy policy
               </span>
+              </Link>
               ,{" "}
+              <Link href="/info/refund">
               <span className="text-orange-600 cursor-pointer">
                 Refund policy
               </span>
+              </Link>
               ,{" "}
+              <Link href="/info/subscription">
               <span className="text-orange-600 cursor-pointer">
                 Subscription Terms
               </span>
+              </Link>
               ,{" "}
+              <Link href="/info/cookie">
               <span className="text-orange-600 cursor-pointer">
                 Cookie policy
               </span>
+              </Link>
             </div>
           </div>
           <div className={style.allow1}>
@@ -113,25 +122,35 @@ const Home = () => {
             ></Switch>{" "}
             <div onClick={() => setChecked1((prev) => !prev)} className="mx-4">
               By continuing, I agree with{" "}
+              <Link href="/info/terms">
               <span className="text-orange-600 cursor-pointer">
                 Terms of service
-              </span>{" "}
+              </span>
+              </Link>
               ,{" "}
+              <Link href="/info/privacy">
               <span className="text-orange-600 cursor-pointer">
                 Privacy policy
               </span>
+              </Link>
               ,{" "}
+              <Link href="/info/refund">
               <span className="text-orange-600 cursor-pointer">
                 Refund policy
               </span>
+              </Link>
               ,{" "}
+              <Link href="/info/subscription">
               <span className="text-orange-600 cursor-pointer">
                 Subscription Terms
               </span>
+              </Link>
               ,{" "}
+              <Link href="/info/cookie">
               <span className="text-orange-600 cursor-pointer">
                 Cookie policy
               </span>
+              </Link>
             </div>
           </div>
           <div className={style.allow1}>
