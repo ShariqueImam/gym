@@ -1,12 +1,17 @@
 import React from "react";
 import Home from "../components/Home/Home";
+import Animator from "../components/UI/Animator";
 const App = () => {
+
+ 
   return (
-    <div className=" overflow-x-hidden">
-      <Home />
-
-
-    </div>
+    
+      <Animator
+        className="overflow-x-hidden"
+    
+      >
+        <Home />
+      </Animator>
   );
 };
 

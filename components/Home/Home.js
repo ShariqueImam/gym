@@ -4,9 +4,10 @@ import { Switch } from "pretty-checkbox-react";
 import "@djthoms/pretty-checkbox";
 import {motion } from 'framer-motion'
 import {Button} from '../UI/Button'
+// text-[#FFF4ED]
 const style = {
   wrapper:
-    " w-[95%] md:w-[80%] lg:w-[70%] mx-auto my-12 flex flex-col md:flex-row text-[#FFF4ED] ",
+    " w-[95%] md:w-[80%] lg:w-[70%] mx-auto my-12 flex flex-col md:flex-row text-gray-200",
   left: "md:w-[50%] flex-1 flex flex-col",
   right: "md:w-[40%]",
   tag: "flex flex-col flex-1 mx-auto",
@@ -35,9 +36,7 @@ const Home = () => {
   const [checked2, setChecked2] = React.useState(false);
 
   return (
-    <motion.div className={style.wrapper}  variants={container}
-    initial="hidden"
-    animate="show">
+    <div className={style.wrapper}  >
       <div className={style.left}>
      
         <div className={style.tag}>
@@ -157,7 +156,7 @@ const Home = () => {
         
          
       </div>
-    </motion.div>
+    </div>
   );
 };
 

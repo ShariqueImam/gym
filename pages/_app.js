@@ -2,7 +2,11 @@ import "../styles/globals.css";
 import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar/Navbar";
+import { useRouter } from 'next/router'
+
 function MyApp({ Component, pageProps }) {
+  const { asPath } = useRouter()
+console.log(asPath)
   return (
     <>
       <Head>
@@ -17,10 +21,11 @@ function MyApp({ Component, pageProps }) {
         className="overflow-x-hidden scroll-smooth home-bg"
         style={{ fontDisplay: "swap" }}
       >
-        <AnimatePresence>
-          <Navbar />
-
-          <Component {...pageProps} />
+        <AnimatePresence exitBeforeEnter>
+          <div key={asPath}>
+            <Navbar />
+            <Component {...pageProps} />
+          </div>
         </AnimatePresence>
       </div>
     </>
