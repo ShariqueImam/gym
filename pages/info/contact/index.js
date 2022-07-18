@@ -1,10 +1,12 @@
-import React from 'react'
-import Animator from '../../../components/UI/Animator'
-
+import React from "react";
+import Animator from "../../../components/UI/Animator";
+import Contact from "../../../components/Contact/Contact";
 const index = () => {
   return (
-    <Animator>index</Animator>
-  )
-}
+    <Animator>
+      <Contact />
+    </Animator>
+  );
+};
 
-export default index
+export default index;
