@@ -20,16 +20,7 @@ const style = {
   recommend: "text-xs text-stone-400 my-2",
 };
 const Home = () => {
-  const container = {
-    hidden: { opacity:0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.3,
-        },
-    },
-}
+
 
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);

@@ -9,6 +9,10 @@ background-color: transparent;
 width: 35px;
 height: 35px;
 }
+.bg{
+    background: radial-gradient(rgba(56, 21, 3, 0.9),rgba(0,0,0,1));
+    /* background: red; */
+}
 
 
 .home-bg{

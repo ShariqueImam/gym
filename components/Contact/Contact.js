@@ -27,8 +27,8 @@ const Contact = () => {
         <h2 className={style.smallHeading}>Contact Details</h2>
 
         <div className={style.singleContactContainer}>
+          <a href="mailto:webmaster@example.com" className="flex">
           <AiOutlineMail className="text-gray-200 text-2xl mx-3"/>
-          <a href="mailto:webmaster@example.com">
             <h2 className={style.contactContent}>support@test.com</h2>
           </a>
         </div>

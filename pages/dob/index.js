@@ -25,6 +25,7 @@ const DOB = () => {
     dobReset();
   };
   return (
+    <Animator>
     <div className={style.wrapper}>
       <SmallHeading text="✅ Your workout and meal plan are almost ready!" />
       <MainHeading text="Let's create your account" />
@@ -50,6 +51,7 @@ const DOB = () => {
         </div>
       </Link>
     </div>
+    </Animator>
   );
 };
 

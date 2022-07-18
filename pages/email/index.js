@@ -46,7 +46,7 @@ const Email = () => {
         />
         <h2 className="text-gray-100 my-3">We respect your privacy and take protecting it very seriously — no spam</h2>
       </div>
-      <Link href="/email">
+      <Link href="/final-page">
         <div onClick={handleClick}>
           <Button />
         </div>
