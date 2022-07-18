@@ -15,7 +15,7 @@ const style = {
 };
 
 const LevelOfFat = () => {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(5);
   const handleChange = (val) => {
     setValue(val);
   };
