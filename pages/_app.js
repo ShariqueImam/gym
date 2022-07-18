@@ -22,14 +22,14 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div
-        className="overflow-x-hidden scroll-smooth home-bg z-0 w-[100vw] py-4"
+        className="overflow-x-hidden scroll-smooth home-bg z-0 w-[100vw]"
         style={{ fontDisplay: "swap" }}
       >
         <AnimatePresence exitBeforeEnter>
           <div key={asPath}>
             <Navbar menu={handleMenu} />
             {isOpen && <OpenMenu menu={handleMenu}/>}
-            <Component {...pageProps} onClick={handleMenu}/>
+            {!isOpen &&  <Component {...pageProps} onClick={handleMenu}/>}
           </div>
         </AnimatePresence>
       </div>

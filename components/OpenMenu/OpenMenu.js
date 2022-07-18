@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import MenuList from './MenuList'
 const style = {
   wrapper:
-    "flex z-10 bg-opacity-[0.5] bg-[rgba(0,0,0,0.7)] w-[100vw] md:h-[90vh] text-gray-100 absolute",
-  container1: "w-[0%] md:w-[70%] md:h-[90vh]",
-  container2: "w-[100%] md:w-[30%] text-stone-300 bg-neutral-800 md:h-[90vh]",
+    "flex z-10 bg-opacity-[0.5] bg-[rgba(0,0,0,0.7)] w-[100vw] h-[90vh] text-gray-100 ",
+  container1: "w-[0%] md:w-[0%] h-[90vh]",
+  container2: "w-[100%] md:w-[100%] text-stone-300 bg-neutral-800 h-[90vh]",
 };
 const variants ={
     initial:{x:500},
