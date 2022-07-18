@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <div
-        className="overflow-x-hidden scroll-smooth home-bg z-0 w-[100vw]"
+        className="overflow-x-hidden scroll-smooth home-bg z-0 w-[100vw] py-4"
         style={{ fontDisplay: "swap" }}
       >
         <AnimatePresence exitBeforeEnter>
