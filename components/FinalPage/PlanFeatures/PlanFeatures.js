@@ -6,7 +6,7 @@ import {MdTimer}from 'react-icons/md'
 import {BsFillCalendarMonthFill}from 'react-icons/bs'
 const style = {
   wrapper: "my-24",
-  container:'flex flex-wrap w-[95%] md:w-[65%] lg:w-[40%] mx-auto items-center justify-center'
+  container:'flex flex-wrap w-[95%] md:w-[70%] lg:w-[50%] mx-auto items-center justify-center'
 };
 const PlanFeatures = () => {
   return (

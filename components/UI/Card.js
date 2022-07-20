@@ -7,7 +7,7 @@ export const StartCard = ({ cardText, imgUrl }) => {
         setIsClick(prev=>!prev);
     };
     const cardStyle = {
-      card: `${isClick ? 'bg-neutral-800 border-orange-700':''} w-[90%] md:w-[40%] lg:w-[25%] mx-auto rounded-lg px-8 py-1 my-5 flex items-center justify-center bg-neutral-900 hover:bg-neutral-800 cursor-pointer transition duration-[400ms] hover:border-orange-700 border-2 border-transparent`,
+      card: `${isClick ? 'bg-neutral-800 border-orange-700':''} w-[90%] md:w-[40%] lg:w-[25%] mx-auto  px-8 py-1 my-5 flex items-center justify-center bg-neutral-900 hover:bg-neutral-800 cursor-pointer transition duration-[400ms] hover:border-orange-700 border-2 border-transparent`,
       smallHeading: "text-2xl md:text-2xl flex-1 text-gray-200",
     };
   return (

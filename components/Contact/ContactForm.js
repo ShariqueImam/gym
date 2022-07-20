@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useInput from "../hooks/validateInput";
+import axios from 'axios'
 const style = {
   wrapper: "",
   smallHeading:
@@ -11,7 +12,7 @@ const style = {
 };
 
 const ContactForm = () => {
-  
+  const tokenWithWriteAccess  = 'sk3lfKnxQJtTFd4mgLBG3YQ1C2O1gkbwkUHx8AMdQEWdJ5S4vbjsHZo8z2UiGLkoa6prTwndZioph4EeQkOZLZbFjwLVCjwz8KGkLzWCcAXDt78v9Q4oCeJx3faCHBHDnspIZ2XqXxVzJNkUpTiAdRiilVhlILODgZ8xSqlbwn7jcKvUs9NR'
   const [isError, setError] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -52,6 +53,28 @@ const ContactForm = () => {
     }
     const sendData = async () => {
       setIsSubmit(true);
+      const { data } = await axios.post(
+        `https://0kecb3ce.api.sanity.io/v2021-06-07/data/mutate/production?returnIds=true`,
+        {
+          mutations: [
+            {
+              create: {
+                _type: "contact",
+                createdAt: new Date().toISOString(),
+                name: name,
+                email: email,
+                message: message,
+              },
+            },
+          ],
+        },
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${tokenWithWriteAccess}`,
+          },
+        }
+      );
       const flashTime = setTimeout(() => {
         setIsSubmit(false);
       }, 2000);

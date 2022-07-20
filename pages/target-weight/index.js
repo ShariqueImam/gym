@@ -4,6 +4,7 @@ import useInput from "../../components/hooks/validateInput";
 import { Button } from "../../components/UI/Button";
 import Link from "next/link";
 import Animator from "../../components/UI/Animator";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
 const style = {
   wrapper: "flex flex-col ",
@@ -27,49 +28,51 @@ const TargetWeight = () => {
     inputChangeHandler: targetChangeHandler,
     reset: targetReset,
   } = useInput((val) => val.includes(0));
-  const handleClick =()=>{
-    
-  }
+  const handleClick = () => {};
   return (
-    <Animator>
-      <MainHeading text={"What's your current and target weight?"} />
-      <div
-        className={style.container}
-        style={{ fontFamily: "Poppins, sans-serif" }}
-      >
-        <div className="my-12">
-          <label htmlFor="current" className="text-gray-200">
-            Current Weight:
-          </label>
-          <input
-            type="text"
-            id="current"
-            placeholder="__kg"
-            className={style.input}
-            value={`${current}`}
-            onChange={currentChangeHandler}
-          />
+    <>
+      <ProgressBar scrollLength={"20%"} val={5} />
+
+      <Animator>
+        <MainHeading text={"What's your current and target weight?"} />
+        <div
+          className={style.container}
+          style={{ fontFamily: "Poppins, sans-serif" }}
+        >
+          <div className="my-12">
+            <label htmlFor="current" className="text-gray-200">
+              Current Weight:
+            </label>
+            <input
+              type="text"
+              id="current"
+              placeholder="__kg"
+              className={style.input}
+              value={`${current}`}
+              onChange={currentChangeHandler}
+            />
+          </div>
+          <div className="my-12">
+            <label htmlFor="target" className="text-gray-200">
+              Target Weight:
+            </label>
+            <input
+              type="text"
+              id="target"
+              placeholder="__kg"
+              className={style.input}
+              value={`${target}`}
+              onChange={targetChangeHandler}
+            />
+          </div>
         </div>
-        <div className="my-12">
-          <label htmlFor="target" className="text-gray-200">
-            Target Weight:
-          </label>
-          <input
-            type="text"
-            id="target"
-            placeholder="__kg"
-            className={style.input}
-            value={`${target}`}
-            onChange={targetChangeHandler}
-          />
-        </div>
-      </div>
-      <Link href='level-of-fitness'>
-        <div onClick={handleClick}>
-          <Button />
-        </div>
-      </Link>
-    </Animator>
+        <Link href="level-of-fitness">
+          <div onClick={handleClick}>
+            <Button />
+          </div>
+        </Link>
+      </Animator>
+    </>
   );
 };
 
