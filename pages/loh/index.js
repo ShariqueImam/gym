@@ -14,7 +14,7 @@ const style = {
   container:
     "flex flex-col px-6 py-4 bg-neutral-800 hover:bg-neutral-700 transition duration-[300ms] w-[60%] md:w-[25%]  mx-auto items-center justify-center",
   text: "text-gray-200 my-3",
-  imgContainer: "flex h-[30vh] w-[40vw] items-center justify-center my-5",
+  imgContainer: "flex items-center justify-center my-5",
 };
 const index = () => {
   const router = useRouter();
@@ -56,7 +56,7 @@ const index = () => {
                 initial="hidden"
                 animate="show"
                 exit="exit"
-                className={`${img === 1 ? "flex" : "hidden"}`}
+                className={`${img === 1 ? "flex" : "hidden"} `}
               >
                 <Image src={"/loh/1.webp"} width={400} height={300} />
               </motion.div>
@@ -65,7 +65,7 @@ const index = () => {
                 initial="hidden"
                 animate="show"
                 exit="exit"
-                className={`${img === 2 ? "flex" : "hidden"}`}
+                className={`${img === 2 ? "flex" : "hidden"} `}
               >
                 <Image src={"/loh/2.webp"} width={400} height={300} />
               </motion.div>
@@ -74,7 +74,7 @@ const index = () => {
                 initial="hidden"
                 animate="show"
                 exit="exit"
-                className={`${img === 3 ? "flex" : "hidden"}`}
+                className={`${img === 3 ? "flex" : "hidden"} `}
               >
                 <Image src={"/loh/3.webp"} width={400} height={300} />
               </motion.div>
