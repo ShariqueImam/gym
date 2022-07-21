@@ -6,10 +6,12 @@ import "@djthoms/pretty-checkbox";
 import Food from "../../components/Food/Food";
 import Animator from "../../components/UI/Animator";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-
+import Cookies from "js-cookie";
 import Link from "next/link";
 const Products = () => {
   const [checked, setChecked] = useState(false);
+  const [Click, setClick] = useState([]);
+
   return (
     <>
       <ProgressBar scrollLength={"84%"} val={21} />
@@ -35,10 +37,10 @@ const Products = () => {
             nutrients your body needs to work out effectively
           </p>
         </div>
-        <Food auto={checked} />
-        <Link href="/challenge">
+        <Food auto={checked} valuess={(value) => setClick([...value])} />
+        <Link href={`${Click.length > 0 || checked ? "/challenge" : ""}`}>
           <div>
-            <Button />
+            <Button dis={Click.length > 0 || checked ? false : true} />
           </div>
         </Link>
       </Animator>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 import { MainHeading } from "../../UI/Heading";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
@@ -12,10 +13,22 @@ const style = {
     "w-[95%] md:w-[40%] mx-auto my-4  py-8 flex flex-col md:flex-row items-center justify-center",
   side: "bg-stone-800 mx-2 px-4 bg-stone-800 flex flex-col py-6 w-[100%] my-3",
 };
+
 function valuetext(value) {
   return `${value}°C`;
 }
 const Summary = () => {
+  const [Height, setHeight] = useState("0");
+  const [Weight, setWeight] = useState("0");
+  const [BMI, setBMI] = useState(0);
+  useEffect(() => {
+    setHeight(Cookies.get("height"));
+    setWeight(Cookies.get("target-weight"));
+  }, []);
+  useEffect(() => {
+    setBMI((+Weight / (0.01 * +Height * 0.01 * +Height)).toFixed(1));
+  }, [Height, Weight]);
+
   return (
     <div
       className={style.wrapper}
@@ -24,12 +37,14 @@ const Summary = () => {
       <MainHeading text={"Personal summary based on your answers"} />
       <div className={style.container}>
         <p className="text-gray-400 text-lg md:text-xl">Current BMI</p>
-        <h1 className="text-gray-100 text-lg md:text-3xl">150 BMI</h1>
+        <h1 className="text-gray-100 text-lg md:text-3xl">{BMI} BMI</h1>
         <div className="mt-8 md:mt-8 w-[85%] md:w-[90%] mx-auto flex items-center justify-center">
           <Box sx={{ width: 650 }}>
             <Slider
               aria-label="Fat"
-              defaultValue={5}
+              defaultValue={
+                Weight > 100 ? 6 : Weight < 100 && Weight > 80 ? 5 : 3
+              }
               getAriaValueText={valuetext}
               valueLabelDisplay="auto"
               step={1}
@@ -75,19 +90,18 @@ const Summary = () => {
           <div className="flex mb-6">
             <GiWaterDrop className="text-5xl md:text-7xl text-orange-600 " />
             <div className="flex flex-col items-center justify-center mx-8">
-              <h2 className="text-gray-100 text-sm">Daily calorie intake</h2>
+              <h2 className="text-gray-100 text-sm">Daily Water intake</h2>
               <p className="text-gray-100 text-xl">1.7L</p>
             </div>
           </div>
           <div className="flex my-1 mx-auto">
-            <TbGlassFull className="text-3xl text-blue-600"/>
-            <TbGlassFull className="text-3xl text-blue-600"/>
-            <TbGlassFull className="text-3xl text-blue-600"/>
-            <TbGlassFull className="text-3xl text-blue-600"/>
-            <TbGlassFull className="text-3xl text-blue-600"/>
-            <TbGlassFull className="text-3xl text-gray-600"/>
-            <TbGlassFull className="text-3xl text-gray-600"/>
-
+            <TbGlassFull className="text-3xl text-blue-600" />
+            <TbGlassFull className="text-3xl text-blue-600" />
+            <TbGlassFull className="text-3xl text-blue-600" />
+            <TbGlassFull className="text-3xl text-blue-600" />
+            <TbGlassFull className="text-3xl text-blue-600" />
+            <TbGlassFull className="text-3xl text-gray-600" />
+            <TbGlassFull className="text-3xl text-gray-600" />
           </div>
         </div>
       </div>

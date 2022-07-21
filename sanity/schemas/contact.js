@@ -19,9 +19,9 @@ export default {
       type: "string",
     },
     {
-      name:'createdAt',
+      name: "createdAt",
       title: "Date",
       type: "string",
-    }
+    },
   ],
 };

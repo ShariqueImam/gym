@@ -20,19 +20,19 @@ const Goal = (props) => {
       <h2 className={style.heading}>Choose Your Goal</h2>
       <div className={style.cardContainer}>
         <Link href="/target-body">
-          <div className={style.card} onClick={() => handleClick("lose")}>
+          <div className={style.card} onClick={() => handleClick("Lose Weight")}>
             <h3 className={style.smallHeading}>Lose Weight</h3>
             <Image src="/1.webp" width={120} height={160} />
           </div>
         </Link>
         <Link href="/target-body">
-          <div className={style.card} onClick={() => handleClick("gain")}>
+          <div className={style.card} onClick={() => handleClick("Gain Weight")}>
             <h3 className={style.smallHeading}>Gain Muscle Mass</h3>
             <Image src="/2.webp" width={120} height={160} />
           </div>
         </Link>
         <Link href="/target-body">
-          <div className={style.card} onClick={() => handleClick("shredded")}>
+          <div className={style.card} onClick={() => handleClick("Get Shredded")}>
             <h3 className={style.smallHeading}>Get Shredded</h3>
             <Image src="/3.webp" width={120} height={160} />
           </div>

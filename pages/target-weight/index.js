@@ -26,6 +26,10 @@ const TargetWeight = () => {
   const valid1 = /^[0-9]+$/.test(target) && +target < 200 && +target > 40;
 
   const valid2 = /^[0-9]+$/.test(current) && +current < 200 && +current > 40;
+  const handleClick = () => {
+    Cookies.set("target-weight", target);
+    setClick(true);
+  };
   return (
     <>
       <ProgressBar scrollLength={"20%"} val={5} />
@@ -75,7 +79,7 @@ const TargetWeight = () => {
           </div>
         </div>
         <Link href={`${valid1 && valid2 ? "/level-of-fitness" : ""}`}>
-          <div onClick={() => setClick(true) && Cookies.set("weight", target)}>
+          <div onClick={handleClick}>
             <Button dis={target.length > 0 ? false : true}/>
           </div>
         </Link>

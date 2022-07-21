@@ -12,16 +12,19 @@ const style = {
   input:
     "my-3 ring-none outline-none px-5 py-2 bg-transparent border-[1px] border-stone-600 placeholder:text-stone-300 w-[100%] text-gray-200 bg-stone-800",
 };
-const Email = (props) => {
+const Email = () => {
   const [email, setEmail] = useState(
     Cookies.get("email") ? Cookies.get("email") : ""
   );
+  console.log(email)
+  const [Checked, setChecked] = useState(false);
   const emailChangeHandler = (e) => {
     setEmail(e.target.value);
   };
+  const valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   const handleClick = () => {
-    props.setData({ types: "email", value: email });
-    setEmail("");
+    setChecked(true);
+    Cookies.set("email", email);
   };
   return (
     <>
@@ -46,14 +49,20 @@ const Email = (props) => {
               value={email}
               onChange={emailChangeHandler}
             />
+
+            {Checked && (
+              <p className={`${valid ? "hidden" : "flex"}  text-red-500`}>
+                Enter a valid email
+              </p>
+            )}
             <h2 className="text-gray-100 my-3">
               We respect your privacy and take protecting it very seriously — no
               spam
             </h2>
           </div>
-          <Link href="/commitment">
+          <Link href={`${ valid > 0 ? "/commitment" : ""}`}>
             <div onClick={handleClick}>
-              <Button />
+              <Button dis={email.length > 0 ? false : true} />
             </div>
           </Link>
         </div>

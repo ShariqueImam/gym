@@ -1,11 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import { MainHeading, SmallHeading } from "../../components/UI/Heading";
 import { Button } from "../../components/UI/Button";
 import Link from "next/link";
 import Animator from "../../components/UI/Animator";
 import Cookies from "js-cookie";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-
 const style = {
   wrapper: "flex flex-col my-8",
   container: "w-[90%] md:w-[40%] lg:w-[25%] mx-auto my-12",
@@ -19,7 +18,7 @@ const style = {
 //   inputChangeHandler: nameChangeHandler,
 //   reset: nameReset,
 // } = useInput((val) => val.includes(0));
-const Name = (props) => {
+const Name = () => {
   const [name, setName] = useState(
     Cookies.get("name") ? Cookies.get("name") : ""
   );
@@ -27,7 +26,7 @@ const Name = (props) => {
     setName(e.target.value);
   };
   const handleClick = () => {
-    props.setData({ types: "name", value: name });
+    Cookies.set("name", name);
     setName("");
   };
   return (
@@ -52,9 +51,9 @@ const Name = (props) => {
             onChange={changeHandler}
           />
         </div>
-        <Link href="/dob">
+        <Link href={`${name.length>0 ? '/dob':''}`}>
           <div onClick={handleClick}>
-            <Button />
+          <Button dis={name.length > 0 ? false : true} />
           </div>
         </Link>
       </Animator>

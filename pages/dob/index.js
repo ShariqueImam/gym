@@ -19,14 +19,14 @@ const style = {
 //   inputChangeHandler: dobChangeHandler,
 //   reset: dobReset,
 // } = useInput((val) => val);
-const DOB = (props) => {
+const DOB = () => {
   const [dob, setDob] = useState(Cookies.get("dob") ? Cookies.get("dob") : "");
 
   const dobChangeHandler = (e) => {
     setDob(e.target.value);
   };
   const handleClick = () => {
-    props.setData({ types: "dob", value: dob });
+    Cookies.set('dob',dob)
     setDob("");
   };
 
@@ -53,11 +53,11 @@ const DOB = (props) => {
               onChange={dobChangeHandler}
             />
           </div>
-          <Link href="/email">
-            <div onClick={handleClick}>
-              <Button />
-            </div>
-          </Link>
+          <Link href={`${dob.length>0 ? '/email':''}`}>
+          <div onClick={handleClick}>
+          <Button dis={dob.length > 0 ? false : true} />
+          </div>
+        </Link>
         </div>
       </Animator>
     </>

@@ -10,15 +10,13 @@ import Cookies from "js-cookie";
 function MyApp({ Component, pageProps }) {
   const { asPath } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  // const [data, setData] = useState([{ name: "" }, { email: "" }, { dob: "" }]);
   const handleMenu = () => {
     setIsOpen((prev) => !prev);
   };
   const handleData = ({ types, value }) => {
     Cookies.set(types, value);
-    // setData(clone);
   };
-  // console.log(Cookies.get());
+
   return (
     <>
       <Head>

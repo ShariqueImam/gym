@@ -3,6 +3,17 @@ module.exports = {
   reactStrictMode: true,
   experimental: {
     // Enables the styled-components SWC transform
-    styledComponents: true
-  }
-}
+    styledComponents: true,
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "cdn.sanity.io",
+          port: "",
+          pathname: "/**",
+        },
+      ],
+    },
+  },
+};
+

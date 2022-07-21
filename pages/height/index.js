@@ -21,6 +21,10 @@ const Height = () => {
   const heightChangeHandler = (e) => {
     setHeight(e.target.value);
   };
+  const handleClick = () => {
+    Cookies.set("height", height);
+    setClick(true);
+  };
   return (
     <>
       <ProgressBar scrollLength={"16%"} val={4} />
@@ -52,8 +56,8 @@ const Height = () => {
           <h2 className={style.height}>Your Height: {height}cm</h2>
         </div>
         <Link href={`${valid ? "/target-weight" : ""}`}>
-          <div onClick={() => setClick(true) && Cookies.set("height", height)}>
-            <Button dis={height.length > 0 ? false : true}/>
+          <div onClick={handleClick}>
+            <Button dis={height.length > 0 ? false : true} />
           </div>
         </Link>
       </Animator>

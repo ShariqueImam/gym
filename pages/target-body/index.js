@@ -19,9 +19,9 @@ const TargetBody = () => {
     <>
       <ProgressBar scrollLength={"4%"} val={1} />
       <Animator className={style.wrapper}>
-        {handle === "lose" && <Lose />}
-        {handle === "gain" && <Gain />}
-        {handle === "shredded" && <Shredded />}
+        {handle === "Lose Weight" && <Lose />}
+        {handle === "Gain Weight" && <Gain />}
+        {handle === "Get Shredded" && <Shredded />}
       </Animator>
     </>
   );

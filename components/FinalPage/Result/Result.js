@@ -11,7 +11,7 @@ const style = {
   rightContainer:
     "w-[50%] flex flex-col justify-center items-center md:items-start px-4 md:px-12 py-7",
 };
-const Result = () => {
+const Result = ({fat}) => {
   return (
     <div
       className={style.wrapper}
@@ -35,7 +35,7 @@ const Result = () => {
       <div className={style.container1}>
         <div className={style.leftContainer}>
           <h2 className="text-gray-100">Body Fat</h2>
-          <h3 className="text-orange-600 text-xl">20-24%</h3>
+          <h3 className="text-orange-600 text-xl">{+fat+20}%-{+fat+20+5}%</h3>
           <h3 className="text-gray-200 text-sm my-3">Body Muscles</h3>
           <div className="flex ">
             <p className="w-[3vw] md:w-[1.5vw] bg-orange-500 h-[0.5vh] mx-1"></p>
@@ -47,7 +47,7 @@ const Result = () => {
         </div>
         <div className={style.rightContainer}>
           <h2 className="text-gray-100 text-xl ">Body Fat</h2>
-          <h3 className="text-orange-600 text-xl">20-24%</h3>
+          <h3 className="text-orange-600 text-xl">{+fat+20-20}%-{+fat+20-20+5}%</h3>
           <h3 className="text-gray-200 text-sm my-3">Body Muscles</h3>
           <div className="flex ">
             <p className="w-[3vw] md:w-[1.5vw] bg-orange-500 h-[0.5vh] mx-1"></p>

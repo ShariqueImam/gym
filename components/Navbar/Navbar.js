@@ -19,7 +19,7 @@ const Navbar = (props) => {
     >
       <Link href="/">
         <div className={style.logo}>
-          <Image src={'/logo.webp'} width={300} height={60}/>
+          <Image src={'/logo.webp'} width={150} height={30}/>
         </div>
       </Link>
       <div className={style.container}>

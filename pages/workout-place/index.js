@@ -20,16 +20,16 @@ const WorkoutPlace = () => {
       <ProgressBar scrollLength={"60%"} val={15} />
       <Animator>
         <MainHeading text="Choose the place for your workouts" />
-        <div onClick={() => handleClick("home")}>
+        <div onClick={() => handleClick("Home")}>
           <BasicCard
             cardText="Home 🏡"
-            isClick={Click === "home" ? true : false}
+            isClick={Click === "Home" ? true : false}
           />
         </div>{" "}
-        <div onClick={() => handleClick("gym")}>
+        <div onClick={() => handleClick("Gym")}>
           <BasicCard
             cardText="Gym 🏋️‍♂️"
-            isClick={Click === "gym" ? true : false}
+            isClick={Click === "Gym" ? true : false}
           />
         </div>
         <Link href={`${Click.length > 0 ? "/workout-frequency" : ""}`}>
