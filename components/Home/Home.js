@@ -19,9 +19,11 @@ const style = {
   checkbox: "bg-transparent accent-orange-600  a mx-3",
   recommend: "text-xs text-stone-400 my-2",
 };
-const Home = () => {
+const Home = (props) => {
 
-
+  const handleClick = (value) => {
+    props.goal(value);
+  };
   const [checked1, setChecked1] = React.useState(false);
   const [checked2, setChecked2] = React.useState(false);
 
@@ -99,7 +101,7 @@ const Home = () => {
       </div>
 
       <div className={style.right}>
-        <Goal />
+        <Goal goal={handleClick}/>
       </div>
       <div className={style.allowSmall}>
       <div className={style.allow1}>

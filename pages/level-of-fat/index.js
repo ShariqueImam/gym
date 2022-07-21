@@ -9,7 +9,7 @@ import { Button } from "../../components/UI/Button";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-
+import Cookies from "js-cookie";
 const style = {
   wrapper: "flex flex-col md:flex-row",
   left: "w-[100%] md:w-[50%] flex items-center justify-center",
@@ -54,7 +54,8 @@ const LevelOfFat = () => {
                 </Box>
               </div>
               <Link href={"/problem-area"}>
-                <div>
+                {/* setting the cookies to the fat that is provided by the user */}
+                <div onClick={Cookies.set('level-of-fat' , value)}>
                   <Button />
                 </div>
               </Link>

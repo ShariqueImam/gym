@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
     Cookies.set(types, value);
     // setData(clone);
   };
-  console.log(Cookies.get());
+  // console.log(Cookies.get());
   return (
     <>
       <Head>

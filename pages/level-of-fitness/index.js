@@ -6,6 +6,7 @@ import Animator from "../../components/UI/Animator";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import Cookies from "js-cookie";
 const fitness = [
   {
     h: "Newcomer",
@@ -82,7 +83,7 @@ const LevelOfFitnes = () => {
           <p>{content.p}</p>
         </div>
         <Link href="/loh">
-          <div>
+        <div onClick={Cookies.set('level-of-fitness' , value)}>
             <Button />
           </div>
         </Link>

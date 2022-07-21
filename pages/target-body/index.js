@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Shredded from "../../components/TargetBody/Shredded";
 import Lose from "../../components/TargetBody/Lose";
 import Gain from "../../components/TargetBody/Gain";
 import Animator from "../../components/UI/Animator";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-
+import Cookies from "js-cookie";
 const style = {
   wrapper: "mt-4",
   cardContainer: "flex flex-col",
 };
 
 const TargetBody = () => {
+  const [handle, setHandle] = useState("lose");
+  useEffect(() => {
+    setHandle(Cookies.get("goal"));
+  }, []);
   return (
     <>
       <ProgressBar scrollLength={"4%"} val={1} />
       <Animator className={style.wrapper}>
-        <Lose />
-        {/* <Gain />
-      <Shredded /> */}
+        {handle === "lose" && <Lose />}
+        {handle === "gain" && <Gain />}
+        {handle === "shredded" && <Shredded />}
       </Animator>
     </>
   );

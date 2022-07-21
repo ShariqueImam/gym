@@ -12,7 +12,7 @@ const style = {
   wrapper: "w-[90%] md:w-[50%] lg:w-[40%] mx-auto flex flex-col",
   buttonContainer: "flex items-center justify-around w-[100%] mt-12 md:mt-16",
   container:
-    "flex flex-col px-6 py-4 bg-neutral-800 hover:bg-neutral-700 transition duration-[300ms] w-[60%] md:w-[25%]  mx-auto items-center justify-center",
+    "flex flex-col px-6 py-4 bg-neutral-800 hover:bg-neutral-700 transition duration-[300ms] w-[60%] md:w-[25%] mx-auto items-center justify-center",
   text: "text-gray-200 my-3",
   imgContainer: "flex items-center justify-center my-5",
 };

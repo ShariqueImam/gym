@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const BasicCard = ({ cardText}) => {
-  const [isClick, setIsClick] = useState(false);
-  const handleClick = () => {
-    setIsClick((prev) => !prev);
-  };
+export const BasicCard = ({ cardText,isClick}) => {
+
   const cardStyle = {
     card: `border-2 border-l-[20px] ${
       isClick ? "bg-neutral-800 border-orange-700" : ""
@@ -13,7 +10,7 @@ export const BasicCard = ({ cardText}) => {
   };
   return (
     // make the container of the card to display 'flex or flex-wrap'
-    <div className={cardStyle.card} onClick={handleClick}>
+    <div className={cardStyle.card} >
       <h3 className={cardStyle.smallHeading}>{cardText}</h3>
     </div>
   );

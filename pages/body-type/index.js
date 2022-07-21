@@ -4,36 +4,46 @@ import { Button } from "../../components/UI/Button";
 import { Card2 } from "../../components/UI/Card2";
 import Animator from "../../components/UI/Animator";
 import ProgessBar from "../../components/ProgressBar/ProgressBar";
-
+import Cookies from "js-cookie";
 import Link from "next/link";
 const BodyType = () => {
-  const [type, setType] = useState("");
+  const [click, setClick] = useState("");
+  const handleClick = (value) => {
+    setClick((prev) => {
+      if (prev === value) return "";
+      return value;
+    });
+  };
   return (
     <>
-      <ProgessBar scrollLength={'8%'} val={2}/>
+      <ProgessBar scrollLength={"8%"} val={2} />
       <Animator>
         <MainHeading text={"Choose your body type"} />
         <SmallHeading text="Choose the one that is most similar to yours now. There are no good or bad body types." />
-        <div>
+        <div onClick={() => handleClick("ectomorph")}>
           <Card2
             cardText={"Ectomorph"}
             para="Little body fat and muscle. Have a hard time gaining weight."
             imgUrl="/1.webp"
+            isClick={click === "ectomorph" ? true : false}
           />
         </div>
-        <div>
+        <div onClick={() => handleClick("mesomorph")}>
           <Card2
             cardText={"Mesomorph"}
             para="Little body fat and muscle. Have a hard time gaining weight."
             imgUrl="/1.webp"
+            isClick={click === "mesomorph" ? true : false}
           />
         </div>
-
-        <Card2
-          cardText={"Endomorph"}
-          para="Little body fat and muscle. Have a hard time gaining weight."
-          imgUrl="/1.webp"
-        />
+        <div onClick={() => handleClick("endomorph")}>
+          <Card2
+            cardText={"Endomorph"}
+            para="Little body fat and muscle. Have a hard time gaining weight."
+            imgUrl="/1.webp"
+            isClick={click === "endomorph" ? true : false}
+          />
+        </div>
         <div className="rounded border-2 border-stone-700 w-[90%] md:w-[40%] lg:w-[25%] mx-auto text-gray-200 px-6 py-8 ">
           <h2 className="text-3xl  text-gray-100 px-4">
             Test to determine your body type
@@ -47,9 +57,9 @@ const BodyType = () => {
           <p>Mesomorph — touching each other.</p>
           <p>Endomorph — doesn’t come into contact.</p>
         </div>
-        <Link href="level-of-fat">
-          <div>
-            <Button />
+        <Link href={`${click.length > 0? "/level-of-fat" : ""}`}>
+          <div onClick={Cookies.set("body-type", click)}>
+            <Button dis={click.length > 0 ? false : true}/>
           </div>
         </Link>
       </Animator>
