@@ -39,7 +39,7 @@ const DOB = () => {
           <MainHeading text="Let's create your account" />
           <div
             className={style.container}
-            style={{ fontFamily: "Poppins, sans-serif" }}
+            style={{fontFamily:'Inter,sans-serif'}}
           >
             <label htmlFor="name" className="text-gray-200 my-4">
               What is your date of birth?

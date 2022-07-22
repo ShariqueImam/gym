@@ -10,10 +10,10 @@ const index = (props) => {
       <a href={`${props.data[0].FileURL}?dl=latexhseet-a4.pdf`} className="text-gray-100">Download Me</a>
       <FinalPage />
       <Footer />
-      <div className="bg-neutral-900 text-stone-400 py-3 text-center">
+      <div className="bg-neutral-900 text-stone-400 py-3 text-center"  style={{fontFamily:'Inter,sans-serif'}}>
         Any questions? We're here to help.
       </div>
-      <div className="bg-neutral-900 flex items-center justify-center">
+      <div className="bg-neutral-900 flex items-center justify-center"  style={{fontFamily:'Inter,sans-serif'}}>
         <a
           href="/"
           className="block underline text-gray-200 py-3 text-sm md:text-xl mx-8 md:mx-16"

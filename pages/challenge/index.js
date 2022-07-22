@@ -36,7 +36,7 @@ const Challenge = () => {
       <ProgressBar scrollLength={"88%"} val={22} />
       <Animator>
         <MainHeading text="In addition to your goal, what challenge would you like to join?" />
-        <div onClick={() => handleClick("1")}>
+        <div onClick={() => handleClick("1")}  style={{fontFamily:'Inter,sans-serif'}}>
           <BasicCard cardText="No excuse! 😎" isClick={Click.includes("1") ? true : false}/>
         </div>{" "}
         <div onClick={() => handleClick("30")}>

@@ -18,7 +18,7 @@ const Products = () => {
       <Animator>
         <MainHeading text="Let us create a meal plan based on your preferences" />
         <SmallHeading text="You can always adjust a meal plan later" />
-        <div className="flex flex-col w-[90%] md:w-[32%] lg:w-[25%] mx-auto my-12 border-b-[1px] border-t-[1px] border-stone-700 py-3 my-4">
+        <div style={{ fontFamily: "Inter,sans-serif" }} className="flex flex-col w-[90%] md:w-[32%] lg:w-[25%] mx-auto my-12 border-b-[1px] border-t-[1px] border-stone-700 py-3 my-4">
           <div className="flex items-center justify-between my-4">
             <div className="text-2xl text-gray-100 tracking-wide">
               LET MADMUSCLE CHOOSE

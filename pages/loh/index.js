@@ -82,7 +82,7 @@ const index = () => {
           </AnimatePresence>
 
           {/* buttons */}
-          <div className={style.buttonContainer}>
+          <div className={style.buttonContainer} style={{ fontFamily: "Inter,sans-serif" }}>
             <div className={style.container} onClick={handleClick}>
               <BiDislike className="text-yellow-400 text-2xl md:text-3xl" />
               <p className={style.text}>DisLike</p>

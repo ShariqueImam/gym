@@ -34,11 +34,10 @@ const AdditionalGoals = () => {
   return (
     <>
       <ProgressBar scrollLength={"44%"} val={11} />
-
       <Animator>
         <SmallHeading text="We're sure you want not only a better body, but to improve your lifestyle too." />
         <MainHeading text="Tick your additional goals below:" />
-        <div onClick={() => handleClick("sleep")}>
+        <div onClick={() => handleClick("sleep")} style={{fontFamily:'Inter,sans-serif'}}>
           <BasicCard
             cardText={"Improve sleep"}
             isClick={Click.includes("sleep") ? true : false}
@@ -68,6 +67,8 @@ const AdditionalGoals = () => {
             isClick={Click.includes("stress") ? true : false}
           />
         </div>{" "}
+        <p className="border-t-[1px] border-stone-500 w-[90%] md:w-[40%] lg:w-[25%] mx-auto"></p>
+
         <div onClick={() => handleClick("none")}>
           <BasicCard
             cardText={"None of the above"}
@@ -78,7 +79,7 @@ const AdditionalGoals = () => {
           <div
             onClick={() => Cookies.set("additional-goals", JSON.stringify(Click))}
           >
-            <Button dis={Click.length > 0 ? false : true} />
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

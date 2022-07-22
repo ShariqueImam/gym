@@ -46,47 +46,51 @@ function valuetext(value) {
 }
 const LevelOfFitnes = () => {
   const [value, setValue] = useState(1);
-  const handleChange = (e,event,h) => {
+  const handleChange = (e, event, h) => {
     setValue(event);
   };
   const content = fitness[value - 1];
   return (
     <>
       <ProgressBar scrollLength={"24%"} val={6} />
-
       <Animator>
-        <MainHeading text={"What's your level of fitness?"} />
-        <SmallHeading
-          text={
-            "Choose your current level of fitness to align the workout plan with."
-          }
-        />
-        {/* slider */}
-        <div className="my-8 md:my-24 w-[85%] md:w-[40%] lg:w-[30%] mx-auto flex items-center justify-center">
-          <Box sx={{ width: 300 }}>
-            <Slider
-              aria-label="Fat"
-              defaultValue={1}
-              getAriaValueText={valuetext}
-              valueLabelDisplay="auto"
-              step={1}
-              marks
-              min={1}
-              onChange={handleChange}
-              max={10}
-              color="warning"
-            />
-          </Box>
-        </div>
-        <div className="text-gray-100 mx-auto w-[80%] md:w-[40%] lg:w-[30%] mx-auto bg-neutral-900 px-7 py-6">
-          <h2>{content.h}</h2>
-          <p>{content.p}</p>
-        </div>
-        <Link href="/loh">
-        <div onClick={Cookies.set('level-of-fitness' , value)}>
-            <Button />
+        <div className="mx-auto" style={{ fontFamily: "Inter,sans-serif" }}>
+          <MainHeading text={"What's your level of fitness?"} />
+          <SmallHeading
+            text={
+              "Choose your current level of fitness to align the workout plan with."
+            }
+          />
+          {/* slider */}
+          <div
+            className="my-8 md:my-12 flex items-center justify-center font-bold"
+            style={{ fontFamily: "Inter,sans-serif" }}
+          >
+            <Box sx={{ width: 300 }}>
+              <Slider
+                aria-label="Always-visible"
+                defaultValue={1}
+                getAriaValueText={valuetext}
+                step={1}
+                marks
+                min={1}
+                onChange={handleChange}
+                max={10}
+                color="warning"
+                valueLabelDisplay="on"
+              />
+            </Box>
           </div>
-        </Link>
+          <div className="text-gray-100 mx-auto w-[90%] md:w-[40%] lg:w-[30%] mx-auto bg-neutral-900 px-7 py-6">
+            <h2 className="font-bold text-xl text-gray-50">{content.h}</h2>
+            <p className="text-stone-300 my-2">{content.p}</p>
+          </div>
+          <Link href="/loh">
+            <div onClick={Cookies.set("level-of-fitness", value)} className="border-t-[1px] border-stone-500 md:border-transparent bg-stone-900 md:bg-transparent w-[100%] bottom-0 fixed md:relative">
+              <Button text={"Continue"} />
+            </div>
+          </Link>
+        </div>
       </Animator>
     </>
   );

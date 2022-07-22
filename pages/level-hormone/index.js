@@ -13,7 +13,7 @@ const LevelHormone = () => {
       <ProgressBar scrollLength={"72%"} val={18} />
 
       <Animator>
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center " style={{ fontFamily: "Inter,sans-serif" }}>
           <MainHeading text={"Level of Cortisol & Testosterone"} />
           <Image src="/level.webp" height={220} width={400} />
           <div className="flex flex-col text-gray-100 mt-8 w-[90%] md:w-[40%] lg:w-[30%] mx-auto">

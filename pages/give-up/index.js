@@ -16,30 +16,29 @@ const GiveUp = () => {
     <>
       <ProgressBar scrollLength={"40%"} val={10} />
       <Animator>
-        <div className={style.wrapper}>
+        <div className={style.wrapper}  style={{fontFamily:'Inter,sans-serif'}}>
           <div className={style.left}>
-            <Image src={"/Fat/15.webp"} width={200} height={350} />
+            <Image src={`/Fat/15.webp`} width={200} height={350} />
           </div>
           <div className={style.right}>
             <h2
               className="text-2xl md:text-3xl lg:text-4xl my-7"
-              style={{ fontFamily: "Yeseva One , cursive" }}
-            >
+              style={{fontFamily:'Inter,sans-serif'}}            >
               Why do people give up on exercise?
             </h2>
             <p className="my-4">
               The #1 reason is starting too big too quickly
             </p>
-            <p className="my-3 text-gray-400">
+            <p className="my-3 text-gray-300 w-[80%] md:w-[50%] ">
               You’ll achieve much more than just a few weeks of exercising.
             </p>
-            <p className="my-3 text-gray-400">
+            <p className="my-3 text-gray-300 w-[80%] md:w-[50%] ">
               We won’t promise you quick results. Our program’s primary goal is
               to change your lifestyle for the better.
             </p>
             <Link href={"additional-goals"}>
               <div>
-                <Button />
+                <Button text={'Continue '}/>
               </div>
             </Link>
           </div>

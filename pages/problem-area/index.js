@@ -55,7 +55,7 @@ const ProblemArea = () => {
           <div
             onClick={() => Cookies.set("problem-area", JSON.stringify(click))}
           >
-            <Button dis={click.length > 0 ? false : true}/>
+            <Button dis={click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

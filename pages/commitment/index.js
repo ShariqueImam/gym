@@ -15,7 +15,7 @@ const index = () => {
   }, []);
 
   return (
-    <div className={style.wrapper}>
+    <div className={style.wrapper}  style={{fontFamily:'Inter,sans-serif'}}>
       <Counter />
     </div>
   );

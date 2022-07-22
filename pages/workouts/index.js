@@ -69,6 +69,7 @@ const Workouts = () => {
             isClick={Click.includes("jogging") ? true : false}
           />
         </div>
+        <p className="border-t-[1px] border-stone-500 w-[90%] md:w-[40%] lg:w-[25%] mx-auto"></p>
         <div onClick={() => handleClick("none")}>
           <BasicCard
             cardText="None of the above"
@@ -78,7 +79,7 @@ const Workouts = () => {
 
         <Link href={`${Click.length > 0? "/workout-issue" : ""}`}>
           <div onClick={() => Cookies.set("workouts", JSON.stringify(Click))}>
-            <Button dis={Click.length > 0 ? false : true} />
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

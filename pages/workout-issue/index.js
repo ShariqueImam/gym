@@ -6,8 +6,13 @@ import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import Cookies from "js-cookie";
 import { Button } from "../../components/UI/Button";
 import Link from "next/link";
+import { AiOutlineStock } from "react-icons/ai";
 const WorkoutIssue = () => {
   const [Click, setClick] = useState([]);
+  const [Show, setShow] = useState(false);
+  const handleClick1 = () => {
+    setShow(true);
+  };
   const handleClick = (value) => {
     if (value !== "none") {
       const index = Click.indexOf(value);
@@ -41,27 +46,66 @@ const WorkoutIssue = () => {
           }
         />
         <div onClick={() => handleClick("motivation")}>
-          <BasicCard cardText="Lack of motivation" isClick={Click.includes("motivation") ? true : false}/>
+          <BasicCard
+            cardText="Lack of motivation"
+            isClick={Click.includes("motivation") ? true : false}
+          />
         </div>
         <div onClick={() => handleClick("clearplan")}>
-          <BasicCard cardText="Didn't have a clear plan" isClick={Click.includes("clearplan") ? true : false}/>
+          <BasicCard
+            cardText="Didn't have a clear plan"
+            isClick={Click.includes("clearplan") ? true : false}
+          />
         </div>
         <div onClick={() => handleClick("hard")}>
-          <BasicCard cardText="My workouts were too hard" isClick={Click.includes("hard") ? true : false}/>
+          <BasicCard
+            cardText="My workouts were too hard"
+            isClick={Click.includes("hard") ? true : false}
+          />
         </div>
         <div onClick={() => handleClick("coaching")}>
-          <BasicCard cardText="Bad coaching"isClick={Click.includes("coaching") ? true : false} />
+          <BasicCard
+            cardText="Bad coaching"
+            isClick={Click.includes("coaching") ? true : false}
+          />
         </div>
+        <p className="border-t-[1px] border-stone-500 w-[90%] md:w-[40%] lg:w-[25%] mx-auto"></p>
+
         <div onClick={() => handleClick("none")}>
-          <BasicCard cardText="None of the above" isClick={Click.includes("none") ? true : false}/>
+          <BasicCard
+            cardText="None of the above"
+            isClick={Click.includes("none") ? true : false}
+          />
+          {/* adding the thanks page */}
+          {Show && (
+            <div className="bg-blue-600 px-5 py-3 w-[90%] md:w-[40%] lg:w-[25%] mx-auto">
+              <div className="flex items-center">
+                <AiOutlineStock className="text-gray-100 text-xl " />
+                <h2 className="text-gray-100 mx-2 text-xl font-bold">Great!</h2>
+              </div>
+              <p className="text-gray-100 text-sm my-2">
+                We’re glad to see you’re already at your ideal weight.
+                MadMuscles can help to have a better quality of your body
+              </p>
+            </div>
+          )}
         </div>
-        <Link href={`${Click.length > 0 ? "/give-up" : ""}`}>
-          <div
-            onClick={() => Cookies.set("workout-issue", JSON.stringify(Click))}
-          >
-            <Button dis={Click.length > 0 ? false : true} />
+        {!Show && (
+          <div onClick={handleClick1}>
+            <Button dis={Click.length > 0 ? false : true} text={"Continue"} />
           </div>
-        </Link>
+        )}
+        {Show && (
+          <Link href={`${Click.length > 0 ? "/give-up" : ""}`}>
+            <div
+              onClick={() =>
+                Cookies.set("workout-issue", JSON.stringify(Click))
+              }
+            >
+              <Button dis={Click.length > 0 ? false : true} text={"Got it"} />
+            </div>
+          </Link>
+        )}
       </Animator>
     </>
   );

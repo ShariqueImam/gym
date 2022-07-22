@@ -17,20 +17,20 @@ const Lose = () => {
       <div onClick={() => handleClick("slim")}>
         <StartCard
           cardText={"Slim Body"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/SLIM_BODY.webp"}
           isClick={click === "slim" ? true : false}
         />
       </div>
       <div onClick={() => handleClick("slimshredded")}>
         <StartCard
           cardText={"Slim Shredded Body"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/SLIM_SHREDDED_BODY.webp"}
           isClick={click === "slimshredded" ? true : false}
         />
       </div>
       <Link href={`${click.length > 0? "/body-type" : ""}`}>
         <div onClick={() => Cookies.set("target-body", click)}>
-          <Button dis={click.length > 0 ? false : true}/>
+          <Button dis={click.length > 0 ? false : true} text={'Continue'}/>
         </div>
       </Link>
     </div>

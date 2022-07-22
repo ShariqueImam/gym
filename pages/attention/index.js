@@ -9,39 +9,38 @@ const style = {
   wrapper: "flex flex-col md:flex-row",
   left: "w-[100%] md:w-[50%] flex items-center justify-center",
   right:
-    "w-[100%] md:w-[50%] bg-neutral-900 h-[70vh] md:h-[90vh] text-gray-100 flex flex-col justify-center px-4 md:px-12",
+    "w-[100%] md:w-[50%] bg-neutral-900 h-[67vh] md:h-[90vh] text-stone-200 flex flex-col justify-center px-4 md:px-12",
 };
 const Attention = () => {
   return (
     <>
       <ProgressBar scrollLength={"48%"} val={12} />
       <Animator>
-        <div className={style.wrapper}>
+        <div className={style.wrapper}  style={{fontFamily:'Inter,sans-serif'}}>
           <div className={style.left}>
             <Image src={"/status.webp"} width={700} height={800} />
           </div>
           <div className={style.right}>
             <h2
-              className="text-2xl md:text-3xl lg:text-4xl my-7"
-              style={{ fontFamily: "Yeseva One , cursive" }}
-            >
+              className="text-3xl md:text-3xl lg:text-4xl my-7 text-gray-50 font-bold"
+              style={{fontFamily:'Inter,sans-serif'}}            >
               We care about your health
             </h2>
             <p className="my-4">If you have any of the following conditions:</p>
-            <ul>
-              <li>Heart disease</li>
-              <li>Severe scoliosis</li>
-              <li>Spinal damage</li>
-              <li>Benign or malignant tumor</li>
-              <li>Hypertension</li>
-            </ul>
-            <p className="my-3 text-gray-400">
+            <ol>
+              <li className="tracking-wide my-3">&#183; Heart disease</li>
+              <li className="tracking-wide my-3">&#183; Severe scoliosis</li>
+              <li className="tracking-wide my-3">&#183; Spinal damage</li>
+              <li className="tracking-wide my-3">&#183; Benign or malignant tumor</li>
+              <li className="tracking-wide my-3">&#183; Hypertension</li>
+            </ol>
+            <p className="my-3 text-stone-300">
               Please contact your physician before starting to follow the
               MadMuscles program.
             </p>
             <Link href={"/push-ups"}>
               <div>
-                <Button />
+                <Button text={'Continue'}/>
               </div>
             </Link>
           </div>

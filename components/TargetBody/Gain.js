@@ -20,27 +20,27 @@ const Gain = () => {
       <div onClick={() => handleClick("athlete")}>
         <StartCard
           cardText={"Athlete"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/ATHLETE.webp"}
           isClick={click === "athlete" ? true : false}
         />
       </div>
       <div onClick={() => handleClick("hero")}>
         <StartCard
           cardText={"Hero"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/HERO.webp"}
           isClick={click === "hero" ? true : false}
         />
       </div>
       <div onClick={() => handleClick("bodybuilder")}>
         <StartCard
           cardText={"BodyBuilder"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/BODYBUILDER.webp"}
           isClick={click === "bodybuilder" ? true : false}
         />
       </div>
       <Link href={`${click.length > 0? "/body-type" : ""}`}>
         <div onClick={() => Cookies.set("target-body", click)}>
-          <Button dis={click.length > 0 ? false : true}/>
+          <Button dis={click.length > 0 ? false : true} text={'Continue'}/>
         </div>
       </Link>
     </div>

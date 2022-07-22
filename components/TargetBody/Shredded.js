@@ -16,27 +16,27 @@ const Shredded = () => {
       <div onClick={() => handleClick("beachbody")}>
         <StartCard
           cardText={"Beach Body"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/BEACH_BODY.webp"}
           isClick={click === "beachbody" ? true : false}
         />
       </div>
       <div onClick={() => handleClick("workoutbody")}>
         <StartCard
           cardText={"Workout Body"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/WORKOUT_BODY.webp"}
           isClick={click === "workoutbody" ? true : false}
         />
       </div>
       <div onClick={() => handleClick("crossfitbody")}>
         <StartCard
           cardText={"Cross-fit Body"}
-          imgUrl={"/1.webp"}
+          imgUrl={"/CROSS_FIT_BODY.webp"}
           isClick={click === "crossfitbody" ? true : false}
         />
       </div>
       <Link href={`${click.length > 0? "/body-type" : ""}`}>
         <div onClick={() => Cookies.set("target-body", click)}>
-          <Button dis={click.length > 0 ? false : true} />
+          <Button dis={click.length > 0 ? false : true} text={'Continue'}/>
         </div>
       </Link>
     </div>

@@ -11,8 +11,8 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Cookies from "js-cookie";
 const style = {
-  wrapper: "flex flex-col md:flex-row",
-  left: "w-[100%] md:w-[50%] flex items-center justify-center",
+  wrapper: "flex flex-col md:flex-row mt-12",
+  left: "w-[100%] md:w-[50%] flex items-center justify-center mt-4",
   right:
     "w-[100%] md:w-[50%] bg-neutral-900 h-35vh] md:h-[90vh] flex items-center justify-start md:px-8 lg:p-24",
 };
@@ -28,9 +28,9 @@ const LevelOfFat = () => {
     <>
       <ProgressBar scrollLength={"12%"} val={3} />
       <Animator>
-        <div className={style.wrapper}>
+        <div className={style.wrapper} style={{ fontFamily: "Inter,sans-serif" }}>
           <div className={style.left}>
-            <Image src={`/Fat/${value}.webp`} width={220} height={450} />
+            <Image src={`/Fat/${value}.webp`} width={280} height={350} />
           </div>
           <div className={style.right}>
             <div className="">
@@ -56,7 +56,7 @@ const LevelOfFat = () => {
               <Link href={"/problem-area"}>
                 {/* setting the cookies to the fat that is provided by the user */}
                 <div onClick={Cookies.set('level-of-fat' , value)}>
-                  <Button />
+                  <Button text={'Continue'}/>
                 </div>
               </Link>
             </div>
