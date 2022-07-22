@@ -48,12 +48,14 @@ const Challenge = () => {
         <div onClick={() => handleClick("100")}>
           <BasicCard cardText="I’ll take on all the challenges! 🙌" isClick={Click.includes("100") ? true : false}/>
         </div>{" "}
+        <p className="border-t-[1px] border-stone-500 w-[90%] md:w-[40%] lg:w-[25%] mx-auto"></p>
+
         <div onClick={() => handleClick("none")}>
-          <BasicCard cardText="None of the above" isClick={Click.includes("none") ? true : false}/>
+          <BasicCard cardText="None of the above ❌" isClick={Click.includes("none") ? true : false}/>
         </div>
         <Link href={`${Click.length > 0 ? "/name" : ""}`}>
           <div onClick={() => Cookies.set("challenge", JSON.stringify(Click))}>
-            <Button dis={Click.length > 0 ? false : true} />
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

@@ -37,15 +37,15 @@ const WorkoutDuration = () => {
             isClick={Click === "One" ? true : false}
           />
         </div>{" "}
-        <div onClick={() => handleClick("One")}>
+        <div onClick={() => handleClick("one")}>
           <BasicCard
             cardText="Let Just Gyym decide"
-            isClick={Click === "One" ? true : false}
+            isClick={Click === "one" ? true : false}
           />
         </div>
         <Link href={`${Click.length > 0 ? "/level-hormone" : ""}`}>
           <div onClick={() => Cookies.set("workout-duration", Click)}>
-            <Button dis={Click.length > 0 ? false : true} />
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

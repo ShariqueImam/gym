@@ -32,8 +32,8 @@ const Time = () => {
           <BasicCard cardText="I prefer to order meals or go out to eat 📦"   isClick={Click === "0" ? true : false}/>
         </div>
         <Link href={`${Click.length > 0 ? "/products" : ""}`}>
-          <div onClick={() => Cookies.set("meal-prep-time", Click)}>
-            <Button dis={Click.length > 0 ? false : true} />
+          <div onClick={() => Cookies.set("meal-prep-time", Click)} className={` mt-4 mt-24 md:mt-4 `}>
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'} />
           </div>
         </Link>
       </Animator>

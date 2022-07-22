@@ -4,6 +4,9 @@ import VisibilitySensor from "react-visibility-sensor";
 // accepts the maximum number, speed,time of the counter from the parent component
 const SingleCounter = (props) => {
 	const [completed,setCompleted] = React.useState(false)
+	const handleEnd = () => { 
+		props.ending()
+	 }
 	return (
 		<div className="text-gray-200 text-3xl sm:text-4xl md:text-5xl font-semibold mt-1" >
 			<CountUp
@@ -16,7 +19,7 @@ const SingleCounter = (props) => {
 				prefix=""
 				suffix="%"
                 delay={0.1}
-				onEnd={()=>{setCompleted(true)}}
+				onEnd={handleEnd}
                 onStart={() => {setCompleted(true)}}
                 formattingFn= {(value) => `${value}%`}
 			>

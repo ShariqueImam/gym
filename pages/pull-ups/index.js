@@ -33,8 +33,8 @@ const Pullups = () => {
           <BasicCard cardText="More than 10 🔥🔥🔥" isClick={Click === "20" ? true : false}/>
         </div>
         <Link href={`${Click.length > 0 ? "/workout-place" : ""}`}>
-          <div onClick={() => Cookies.set("pull-ups", Click)}>
-            <Button dis={Click.length > 0 ? false : true} />
+          <div onClick={() => Cookies.set("pull-ups", Click)}className="mt-36 md:mt-2">
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'} />
           </div>
         </Link>
       </Animator>

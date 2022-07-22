@@ -133,13 +133,13 @@ const TargetWeight = () => {
           )}
         </div>
         {!Show && (
-          <div onClick={handleClick1}>
+          <div onClick={handleClick1} className={`${Show ? 'mt-4':'mt-36'} md:mt-4`}>
             <Button dis={target.length > 0 ? false : true} text={"Continue"} />
           </div>
         )}
         {Show && (
           <Link href={`${valid1 && valid2 ? "/level-of-fitness" : ""}`}>
-            <div onClick={handleClick}>
+            <div onClick={handleClick} className={`${Show ? 'mt-4':'mt-36'} md:mt-4`}>
               <Button dis={target.length > 0 ? false : true} text={"Got it"} />
             </div>
           </Link>

@@ -35,7 +35,7 @@ const Shredded = () => {
         />
       </div>
       <Link href={`${click.length > 0? "/body-type" : ""}`}>
-        <div onClick={() => Cookies.set("target-body", click)}>
+        <div onClick={() => Cookies.set("target-body", click)}  className="mt-4 md:mt-2">
           <Button dis={click.length > 0 ? false : true} text={'Continue'}/>
         </div>
       </Link>

@@ -32,8 +32,8 @@ const Pushups = () => {
           <BasicCard cardText="More than 30 😤" isClick={Click === "40" ? true : false}/>
         </div>
         <Link href={`${Click.length > 0 ? "/pull-ups" : ""}`}>
-          <div onClick={() => Cookies.set("push-ups", Click)}>
-            <Button dis={Click.length > 0 ? false : true} />
+          <div onClick={() => Cookies.set("push-ups", Click)} className="mt-36 md:mt-2">
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

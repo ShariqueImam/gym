@@ -18,7 +18,7 @@ const GiveUp = () => {
       <Animator>
         <div className={style.wrapper}  style={{fontFamily:'Inter,sans-serif'}}>
           <div className={style.left}>
-            <Image src={`/Fat/15.webp`} width={200} height={350} />
+            <Image src={`/Fat/15.webp`} width={300} height={350} />
           </div>
           <div className={style.right}>
             <h2

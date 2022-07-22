@@ -33,8 +33,8 @@ const WorkoutPlace = () => {
           />
         </div>
         <Link href={`${Click.length > 0 ? "/workout-frequency" : ""}`}>
-          <div onClick={() => Cookies.set("workout-place", Click)}>
-            <Button dis={Click.length > 0 ? false : true} />
+          <div onClick={() => Cookies.set("workout-place", Click)} className="mt-72 md:mt-2">
+            <Button dis={Click.length > 0 ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

@@ -86,7 +86,7 @@ const LevelOfFitnes = () => {
             <p className="text-stone-300 my-2">{content.p}</p>
           </div>
           <Link href="/loh">
-            <div onClick={Cookies.set("level-of-fitness", value)} className="border-t-[1px] border-stone-500 md:border-transparent bg-stone-900 md:bg-transparent w-[100%] bottom-0 fixed md:relative">
+            <div onClick={Cookies.set("level-of-fitness", value)} className="mt-48 md:mt-2">
               <Button text={"Continue"} />
             </div>
           </Link>

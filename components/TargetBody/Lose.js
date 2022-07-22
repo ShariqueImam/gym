@@ -29,7 +29,7 @@ const Lose = () => {
         />
       </div>
       <Link href={`${click.length > 0? "/body-type" : ""}`}>
-        <div onClick={() => Cookies.set("target-body", click)}>
+        <div onClick={() => Cookies.set("target-body", click)}  className="mt-28 md:mt-2">
           <Button dis={click.length > 0 ? false : true} text={'Continue'}/>
         </div>
       </Link>

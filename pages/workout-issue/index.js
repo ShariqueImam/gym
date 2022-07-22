@@ -10,9 +10,7 @@ import { AiOutlineStock } from "react-icons/ai";
 const WorkoutIssue = () => {
   const [Click, setClick] = useState([]);
   const [Show, setShow] = useState(false);
-  const handleClick1 = () => {
-    setShow(true);
-  };
+ 
   const handleClick = (value) => {
     if (value !== "none") {
       const index = Click.indexOf(value);
@@ -35,6 +33,9 @@ const WorkoutIssue = () => {
         setClick(["none"]);
       }
     }
+  };
+  const handleClick1 = () => {
+    setShow(true);
   };
   return (
     <>

@@ -40,7 +40,7 @@ const Products = () => {
         <Food auto={checked} valuess={(value) => setClick([...value])} />
         <Link href={`${Click.length > 0 || checked ? "/challenge" : ""}`}>
           <div>
-            <Button dis={Click.length > 0 || checked ? false : true} />
+            <Button dis={Click.length > 0 || checked ? false : true} text={'Continue'}/>
           </div>
         </Link>
       </Animator>

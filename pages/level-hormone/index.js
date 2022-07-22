@@ -41,7 +41,7 @@ const LevelHormone = () => {
           </div>
           <Link href="/water">
             <div>
-              <Button />
+              <Button text={'Continue'}/>
             </div>
           </Link>
         </div>
