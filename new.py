@@ -1,25 +1,29 @@
-class FoodItem:
-    Zinger = 'Zinger Burger'
-    Pattie = 'Pattie Burger'
-    Platter = 'Platter Burger'
-    Mutton = 'Mutton Burger'
-    Beef = 'Beef Burger'
-    # adding the condiments
-    Mayo="Mayo"
-    Cheese = "Cheese"
-    Red_Sauce='Red Sauce'
-    Mint_Sauce = 'Mint_Sauce'
-    No = 'No Condiment'
-    # adding the drinks
-    Coke="Coke"
-    Fanta="Fanta"
-    Sprite="Sprite"
 
+
+from math import comb
+
+
+class FoodItem:
+    Zinger = ['Zinger Burger',12.99]
+    Pattie = ['Pattie Burger',10.99]
+    Platter = ['Platter Burger',15.99]
+    Mutton = ['Mutton Burger',24.99]
+    Beef = ['Beef Burger',20.99]
+    # adding the condiments
+    Mayo=["Mayo",2.50]
+    Cheese = ["Cheese",1.50]
+    Red_Sauce=['Red Sauce',1.00]
+    Mint_Sauce = ['Mint_Sauce',1.00]
+    No = ['No Condiment',0]
+    # adding the drinks
+    Coke=["Coke",4.99]
+    Fanta=["Fanta",4.99]
+    Sprite=["Sprite",4.99]
     # adding the sides
-    Ketchup = "ketchup"
-    Pasta_Salad= "Pasta Salad"
-    Onion_Rings = "Onion Rings"
-    Baked_Bean = "Baked Bean"
+    Ketchup = ["ketchup",2.99]
+    Pasta_Salad= ["Pasta Salad",7.50]
+    Onion_Rings = ["Onion Rings",7.99]
+    Baked_Bean = ["Baked Bean",3.99]
     # adding the combo
     pass
 class Burger(FoodItem):    
@@ -158,8 +162,7 @@ def user_input_burger():
 def user_input_drink():
     d = Drink()
     b=0
-    drink_order_item=''
-    while b<0:
+    while b < 1:
     #ask user for input and store it in side object 
         print('\nOur offered Drinks are: ')
     # getting the data from the parent class
@@ -180,7 +183,6 @@ def user_input_drink():
                 except:
                     name = -1        
         if name==1:
-            drink_order_item='Coke'
             d.add_into_drink('Coke')
             print('Coke as a side added to order' )
         # add the ketchup into the order
@@ -193,11 +195,23 @@ def user_input_drink():
             drink_order_item='Sprite'
             d.add_into_drink('Sprite')
             print('Sprite as a side added to order' )
-        print('Enter size of drink')
+        print('\nEnter size of drink')
         print('Press 1 for Large')
         print('Press 2 for Medium')
         print('Press 3 for Small')
         size=input("Enter : ")
+        try:
+            size = int(size)
+            if(size <= 0 or size > 3):
+                raise
+        except:
+            while type(size) != int or size <= 0 or size >3 :
+                try:
+                    size = int(
+                        input("Press 1 to 3 to select an option: "))
+                except:
+                    size = -1        
+
         if size==1:
             d.add_into_drink('Large')
             print('Large drink added to order' )
@@ -235,7 +249,7 @@ def user_input_drink():
 def user_input_side():
     s = Side()
     c=0
-    while c<0:
+    while c<1:
     #ask user for input and store it in side object 
         print('\nOur offered Side are:')
     # getting the data from the parent class
@@ -244,7 +258,7 @@ def user_input_side():
         print("Press 2 for Pasta Salad")
         print("Press 3 for Onion Ring")
         print("Press 4 for Baked Bean")
-        name = input("Enter the Side that you want to order: ")
+        name = input("\nEnter the Side that you want to order: ")
         try:
             name = int(name)
             if(name <= 0 or name > 4):
@@ -310,8 +324,8 @@ def menu():
     print("\nWhat do you want to order?")
     print("Press 1 for Burger")
     print("Press 2 for Drink")
-    print("Press 3 for Combo")
-    print("Press 4 for Side")
+    print("Press 3 for Side")
+    print("Press 4 for Combo")
     choice = input("Enter Choice: ")
     try:
         choice = int(choice)
@@ -330,10 +344,10 @@ class Order:
     burger_order=[]    
     drink_order=[]    
     side_order=[]    
-    combo_order=[]    
     def add_into_burger(self,burgers):
         for burger in burgers:
             self.burger_order.append(burger)
+        print(self.burger_order)
     def add_into_drink(self,drinks):
         for drink in drinks:
             self.drink_order.append(drink)
@@ -342,24 +356,22 @@ class Order:
             self.side_order.append(side)
     def add_into_combo(self,burger,drink,side):
         for val in burger:
-            self.combo_order.append(val)
+            self.burger_order.append(val)
         for val in drink:
-            self.combo_order.append(val)
+            self.drink_order.append(val)
         for val in side:
-            self.combo_order.append(val)
+            self.side_order.append(val)
     
     def printOrder(self):
         print(self.burger_order)
         print(self.drink_order)
         print(self.side_order)
-        print(self.combo_order)
 
     def take_order(self):
     #ask user for name for the order 
     #repeat taking order until client is done 
     #display order details
     #display a thank you message
-        user_input_side()
         print("Welcome to Burger Shop")
         d=0
         while d<1:
@@ -370,7 +382,6 @@ class Order:
             if value==2:
                 drinks = user_input_drink()
                 self.add_into_drink(drinks.get_drink_info())
-
             if value==3:
                 side = user_input_side()
                 self.add_into_side(side.get_side_info())
@@ -381,6 +392,18 @@ class Order:
             print("Press 1 for YES")
             print("Press 2 for NO")
             val=input("Press : ")
+            try:
+                val = int(val)
+                if(val <= 0 or val >2):
+                    raise
+            except:
+                while type(val) != int or val <= 0 or val >2 :
+                    try:
+                        val = int(
+                            input("Press 1 to 2 to select an option: "))
+                    except:
+                        val = -1        
+            
             if val==1:
                 d=0
             if val==2:
@@ -390,3 +413,4 @@ class Order:
 order = Order()
 order.take_order()
 order.printOrder()
+
