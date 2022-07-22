@@ -36,7 +36,7 @@ const GiveUp = () => {
               We won’t promise you quick results. Our program’s primary goal is
               to change your lifestyle for the better.
             </p>
-            <Link href={"additional-goals"}>
+            <Link href={"half-way"}>
               <div>
                 <Button text={'Continue '}/>
               </div>
