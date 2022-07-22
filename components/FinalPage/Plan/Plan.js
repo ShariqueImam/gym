@@ -18,10 +18,19 @@ const Plan = () => {
         <Image src={"/final/a.webp"} height={500} width={200} />
       </div>
       <div className={style.right}>
-        <h2 className="text-xl text-gray-200 md:text-4xl">Choose the best plan for you</h2>
-        <SinglePlanCard text={"6-MONTH PLAN"} total={59.99} per={0.33} />
-        <SinglePlanCard text={"3-MONTH PLAN"} total={49.99} per={0.54} />
-        <SinglePlanCard text={"1-MONTH PLAN"} total={29.99} per={1.00} />
+        <h2 className="text-xl text-gray-200 md:text-4xl">
+          Choose the best plan for you
+        </h2>
+        <Link href={'/download'}>
+          <SinglePlanCard text={"3-MONTH PLAN"} total={49.99} per={0.54} />
+        </Link>
+        <Link href={'/download'}>
+
+          <SinglePlanCard text={"6-MONTH PLAN"} total={59.99} per={0.33} />
+        </Link>
+        <Link href={'/download'}>
+          <SinglePlanCard text={"1-MONTH PLAN"} total={29.99} per={1.0} />
+        </Link>
         <Link href="">
           <div>
             <Button />

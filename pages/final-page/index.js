@@ -4,10 +4,9 @@ import Footer from "../../components/Footer/Footer";
 import Animator from "../../components/UI/Animator";
 import client from "../api/client";
 const index = (props) => {
-  console.log(props.data)
   return (
     <Animator>
-      <a href={`${props.data[0].FileURL}?dl=latexhseet-a4.pdf`} className="text-gray-100">Download Me</a>
+      {/* <a href={`${props.data[0].FileURL}?dl=latexhseet-a4.pdf`} className="text-gray-100">Download Me</a> */}
       <FinalPage />
       <Footer />
       <div className="bg-neutral-900 text-stone-400 py-3 text-center"  style={{fontFamily:'Inter,sans-serif'}}>
@@ -37,9 +36,3 @@ const index = (props) => {
 
 export default index;
 
-export async function getServerSideProps() {
-  const data = await client.fetch(`*[_type=='plans']{name,
-'FileURL':plan.asset->url
-}`);
-  return { props: { data } };
-}
