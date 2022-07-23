@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Counter from "../../components/Counter/Counter";
 import { useRouter } from "next/router";
 import { GiFlowers, GiCancel } from "react-icons/gi";
@@ -8,6 +8,8 @@ const style = {
 const index = () => {
   const [Show, setShow] = useState(false);
   const [Show1, setShow1] = useState(false);
+ 
+
   const router = useRouter();
   const handleEnd = () => {
     setShow(true);
@@ -16,13 +18,15 @@ const index = () => {
     setShow(false);
     setShow1(true);
   };
-  const handleEnd1 = () => {  }
+  const handleEnd1 = () => {};
 
   if (Show1 === true) {
     setTimeout(() => {
       router.push("/final-page");
     }, 1800);
   }
+  
+
   return (
     <div className={style.wrapper} style={{ fontFamily: "Inter,sans-serif" }}>
       {!Show && !Show1 && <Counter min={0} max={50} end={handleEnd} />}
@@ -64,7 +68,7 @@ const index = () => {
         </div>
       )}
 
-      {Show1 && <Counter min={55} max={100} end={handleEnd1}/>}
+      {Show1 && <Counter min={55} max={100} end={handleEnd1} />}
     </div>
   );
 };

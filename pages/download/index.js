@@ -5,31 +5,42 @@ import Cookies from "js-cookie";
 
 const index = (props) => {
   const [Val, setVal] = useState(Cookies.get("target-body"));
-  const [Code, setCode] = useState(Cookies.get(0));
-  if (Val === "slim"){
-    setCode(0)
+  const [Code, setCode] = useState(0);
+  const [Got, setGot] = useState(false);
+
+  if (Val === "slim" && Got == false) {
+    setCode(0);
+    setGot(true);
   }
-  if (Val === "slimshredded"){
-    setCode(1)
+  if (Val === "slimshredded" && Got == false) {
+    setCode(1);
+    setGot(true);
   }
-  if (Val === "athlete"){
-    setCode(2)
+  if (Val === "athlete" && Got == false) {
+    setCode(2);
+    setGot(true);
   }
-  if (Val === "hero"){
-    setCode(3)
+  if (Val === "hero" && Got == false) {
+    setCode(3);
+    setGot(true);
   }
-  if (Val === "bodybuilder"){
-    setCode(4)
+  if (Val === "bodybuilder" && Got == false) {
+    setCode(4);
+    setGot(true);
   }
-  if (Val === "beachbody"){
-    setCode(5)
+  if (Val === "beachbody" && Got == false) {
+    setCode(5);
+    setGot(true);
   }
-  if (Val === "workoutbody"){
-    setCode(6)
+  if (Val === "workoutbody" && Got == false) {
+    setCode(6);
+    setGot(true);
   }
-  if (Val === "crossfitbody"){
-    setCode(7)
+  if (Val === "crossfitbody") {
+    setCode(7);
+    setGot(true);
   }
+  return (
     <Animator>
       <div
         className=" w-[95%] md:w-[75%] lg:w-[45%] mx-auto flex flex-col"
@@ -44,14 +55,15 @@ const index = (props) => {
 
         <button className="bg-orange-600 text-gray-50 px-6 md:px-8 py-3 md:py-4 max-w-fit mx-auto my-12 tracking-wide">
           <a
-            href={`${props.data[0].FileURL}?dl=latexhseet-a4.pdf`}
+            href={`${props.data[Code].FileURL}?dl=latexhseet-a4.pdf`}
             className="text-gray-100"
           >
             Download Plan
           </a>
         </button>
       </div>
-    </Animator>;
+    </Animator>
+  );
 };
 
 export default index;

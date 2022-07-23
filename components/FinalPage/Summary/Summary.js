@@ -18,8 +18,8 @@ function valuetext(value) {
   return `${value}°C`;
 }
 const Summary = () => {
-  const [Height, setHeight] = useState("0");
-  const [Weight, setWeight] = useState("0");
+  const [Height, setHeight] = useState(1);
+  const [Weight, setWeight] = useState(1);
   const [BMI, setBMI] = useState(0);
   useEffect(() => {
     setHeight(Cookies.get("height"));

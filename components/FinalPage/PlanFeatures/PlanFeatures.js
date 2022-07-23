@@ -14,6 +14,8 @@ const PlanFeatures = () => {
   const [Goal, setGoal] = useState("Lose");
   const [Place, setPlace] = useState("Gym");
   const [Duration, setDuration] = useState("1");
+  const [Name, setName] = useState(Cookies.get("name"));
+
   useEffect(() => {
     setGoal(Cookies.get("goal"));
     setPlace(Cookies.get("workout-place"));
@@ -22,7 +24,7 @@ const PlanFeatures = () => {
 
   return (
     <div className={style.wrapper}>
-      <MainHeading text={"Shredded plan for Shariq is ready!"} />
+      <MainHeading text={`Shredded plan for ${Name} is ready!`} />
       <div className={style.container}>
         <SingleFeature Icon={GiStairsGoal} heading={"Goal"} text={`${Goal}`} />
         <SingleFeature

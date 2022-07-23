@@ -11,17 +11,32 @@ const style = {
   left: "w-[95%] md:w-[50%] flex items-center justify-center",
   right: "w-[95%] md:w-[50%] ",
 };
-const Plan = (val) => {
+const Plan = () => {
+  const [isClick, setIsClick] = useState('3');
   const [item, setItem] = useState({
-    name: "Apple AirPods",
-    description: "Latest Apple AirPods.",
-    image:
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+    name: "Just Gyym Plans",
+    description: "Best Fitness Plan for your healthy life",
+    image: "https://res.cloudinary.com/shariqcloud/image/upload/v1658561808/Just%20Gyym/logo_imfqah.webp",
     quantity: 1,
-    price: 999,
+    price: 30,
   });
-  const handleClick = (val) => {
-    setItem({ name: "One", price: val });
+  const handleClick = (name, price) => {
+    if (price==49.99){
+      setIsClick('3')
+    }
+    if (price==59.99){
+      setIsClick('6')
+    }
+    if (price==29.99){
+      setIsClick('1')
+    }
+    setItem({
+      name,
+      price,
+      description: "Best Fitness Plan for your healthy life",
+      image: "https://res.cloudinary.com/shariqcloud/image/upload/v1658561808/Just%20Gyym/logo_imfqah.webp",
+      quantity: 1,
+    });
   };
   const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
   const stripePromise = loadStripe(publishableKey);
@@ -47,19 +62,19 @@ const Plan = (val) => {
         <h2 className="text-xl text-gray-200 md:text-4xl">
           Choose the best plan for you
         </h2>
-        <div onClick={() => handleClick(50)}>
+        <div onClick={() => handleClick("3-MONTH PLAN", 49.99)}>
           {/* <Link href={"/download"}> */}
-          <SinglePlanCard text={"3-MONTH PLAN"} total={49.99} per={0.54} />
+          <SinglePlanCard text={"3-MONTH PLAN"} total={49.99} per={0.54} isClick={isClick==='3'?true:false}/>
           {/* </Link> */}
         </div>
-        <div onClick={() => handleClick(60)}>
+        <div onClick={() => handleClick("6-MONTH PLAN", 59.99)}>
           {/* <Link href={"/download"}> */}
-          <SinglePlanCard text={"6-MONTH PLAN"} total={59.99} per={0.33} />
+          <SinglePlanCard text={"6-MONTH PLAN"} total={59.99} per={0.33} isClick={isClick==='6'?true:false}/>
           {/* </Link> */}
         </div>
-        <div onClick={() => handleClick(30)}>
+        <div onClick={() => handleClick("1-MONTH PLAN", 30.99)}>
           {/* <Link href={"/download"}> */}
-          <SinglePlanCard text={"1-MONTH PLAN"} total={29.99} per={1.0} />
+          <SinglePlanCard text={"1-MONTH PLAN"} total={29.99} per={1.0}  isClick={isClick==='1'?true:false}/>
           {/* </Link> */}
         </div>
         <Link href="">
