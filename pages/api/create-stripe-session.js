@@ -25,7 +25,7 @@ console.log(item)
     payment_method_types: ['card'],
     line_items: [transformedItem],
     mode: 'payment',
-    success_url: redirectURL + '/download',
+    success_url: redirectURL + '/1221-1212rdGbaa21-da3a',
     cancel_url: redirectURL,
     metadata: {
       images: item.image,
