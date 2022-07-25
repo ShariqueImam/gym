@@ -72,7 +72,7 @@ const Plan = () => {
           <SinglePlanCard text={"6-MONTH PLAN"} total={59.99} per={0.33} isClick={isClick==='6'?true:false}/>
           {/* </Link> */}
         </div>
-        <div onClick={() => handleClick("1-MONTH PLAN", 30.99)}>
+        <div onClick={() => handleClick("1-MONTH PLAN", 29.99)}>
           {/* <Link href={"/download"}> */}
           <SinglePlanCard text={"1-MONTH PLAN"} total={29.99} per={1.0}  isClick={isClick==='1'?true:false}/>
           {/* </Link> */}

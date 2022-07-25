@@ -89,7 +89,7 @@ const index = (props) => {
 };
 
 export default index;
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await client.fetch(`*[_type=='plans']{name,
   'FileURL':plan.asset->url
   }`);

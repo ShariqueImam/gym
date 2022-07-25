@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 const style = {
   wrapper: "text-[#FFF4ED]",
@@ -22,19 +22,19 @@ const Goal = (props) => {
         <Link href="/target-body">
           <div className={style.card} onClick={() => handleClick("Lose Weight")}>
             <h3 className={style.smallHeading}>Lose Weight</h3>
-            <Image src="/1.webp" width={120} height={160} />
+            <img src="/1.webp" width={120} height={160} />
           </div>
         </Link>
         <Link href="/target-body">
           <div className={style.card} onClick={() => handleClick("Gain Weight")}>
             <h3 className={style.smallHeading}>Gain Muscle Mass</h3>
-            <Image src="/2.webp" width={120} height={160} />
+            <img src="/2.webp" width={120} height={160} />
           </div>
         </Link>
         <Link href="/target-body">
           <div className={style.card} onClick={() => handleClick("Get Shredded")}>
             <h3 className={style.smallHeading}>Get Shredded</h3>
-            <Image src="/3.webp" width={120} height={160} />
+            <img src="/3.webp" width={120} height={160} />
           </div>
         </Link>
       </div>
