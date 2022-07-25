@@ -4,7 +4,7 @@ import Animator from "../../components/UI/Animator";
 import Cookies from "js-cookie";
 
 const index = (props) => {
-  const [Val, setVal] = useState(Cookies.get("target-body"));
+  const [Val, setVal] = useState(Cookies.get("target-body")||'slim');
   const [Code, setCode] = useState(-1);
   const [Got, setGot] = useState(false);
 
