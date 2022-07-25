@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar/Navbar";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import OpenMenu from "../components/OpenMenu/OpenMenu";
-import { Provider } from "../context";
 import Cookies from "js-cookie";
 function MyApp({ Component, pageProps }) {
   const { asPath } = useRouter();
@@ -35,7 +34,6 @@ function MyApp({ Component, pageProps }) {
           <div key={asPath}>
             <Navbar menu={handleMenu} />
             {isOpen && <OpenMenu menu={handleMenu} />}
-            <Provider>
               {!isOpen && (
                 <Component
                   {...pageProps}
@@ -43,7 +41,6 @@ function MyApp({ Component, pageProps }) {
                   setData={handleData}
                 />
               )}
-            </Provider>
           </div>
         </AnimatePresence>
       </div>

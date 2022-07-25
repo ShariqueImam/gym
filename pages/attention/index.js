@@ -14,7 +14,7 @@ const style = {
 const Attention = () => {
   return (
     <>
-      <ProgressBar scrollLength={"48%"} val={12} />
+      <ProgressBar scrollLength={"48%"} val={12}  link="/additional-goals"/>
       <Animator>
         <div className={style.wrapper}  style={{fontFamily:'Inter,sans-serif'}}>
           <div className={style.left}>

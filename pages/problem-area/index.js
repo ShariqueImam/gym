@@ -20,7 +20,7 @@ const ProblemArea = () => {
 
   return (
     <>
-      <ProgressBar scrollLength={"12%"} val={3} />
+      <ProgressBar scrollLength={"12%"} val={3} link="/level-of-fat"/>
       <Animator>
         <MainHeading text="Select problem areas" />
         <div onClick={() => handleClick("weakchest")}>

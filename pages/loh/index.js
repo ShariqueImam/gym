@@ -43,7 +43,7 @@ const index = () => {
   };
   return (
     <>
-      <ProgressBar scrollLength={"28%"} val={7} />
+      <ProgressBar scrollLength={"28%"} val={7} link="/level-of-fitness"/>
 
       <Animator>
         <div className={style.wrapper}>

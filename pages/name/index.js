@@ -26,7 +26,7 @@ const Name = () => {
   return (
     <>
       {/* <ProgressBar scrollLength={"92%"} val={23} /> */}
-      <Animator className={style.wrapper}>
+      <Animator className={style.wrapper} >
         <div className="bg-stone-800 w-[90%] md:w-[40%] lg:w-[25%] mx-auto py-3">
           <p className="font-thin text-gray-50 tracking-wide text-lg md:text-md my-1 mx-5 text-left md:text-center">
             ✅ Your workout and meal plan are almost ready!

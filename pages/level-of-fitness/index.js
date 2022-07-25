@@ -52,7 +52,7 @@ const LevelOfFitnes = () => {
   const content = fitness[value - 1];
   return (
     <>
-      <ProgressBar scrollLength={"24%"} val={6} />
+      <ProgressBar scrollLength={"24%"} val={6} link="/target-weight"/>
       <Animator>
         <div className="mx-auto" style={{ fontFamily: "Inter,sans-serif" }}>
           <MainHeading text={"What's your level of fitness?"} />

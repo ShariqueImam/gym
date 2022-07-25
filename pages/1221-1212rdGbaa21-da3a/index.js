@@ -42,7 +42,7 @@ const index = (props) => {
   }
   return (
     <Animator>
-      {!Val > -1 && (
+      {!Code == -1 && (
         <div
           className=" w-[95%] md:w-[75%] lg:w-[45%] mx-auto flex flex-col"
           style={{ fontFamily: "Inter,sans-serif" }}
@@ -62,7 +62,7 @@ const index = (props) => {
           </button>
         </div>
       )}
-      {Val > -1 && (
+      {Code > -1 && (
         <div
           className=" w-[95%] md:w-[75%] lg:w-[45%] mx-auto flex flex-col"
           style={{ fontFamily: "Inter,sans-serif" }}

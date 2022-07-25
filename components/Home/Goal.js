@@ -15,7 +15,7 @@ const Goal = (props) => {
   return (
     <div
       className={style.wrapper}
-      style={{ fontFamily: "Poppins, sans-serif" }}
+      style={{ fontFamily: "Inter, sans-serif" }}
     >
       <h2 className={style.heading}>Choose Your Goal</h2>
       <div className={style.cardContainer}>

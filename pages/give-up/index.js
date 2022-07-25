@@ -14,7 +14,7 @@ const style = {
 const GiveUp = () => {
   return (
     <>
-      <ProgressBar scrollLength={"40%"} val={10} />
+      <ProgressBar scrollLength={"40%"} val={10}  link="/workout-issue"/>
       <Animator>
         <div className={style.wrapper}  style={{fontFamily:'Inter,sans-serif'}}>
           <div className={style.left}>

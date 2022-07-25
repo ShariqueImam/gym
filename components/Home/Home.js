@@ -32,10 +32,10 @@ const Home = (props) => {
       <div className={style.left}>
      
         <div className={style.tag}>
-          <h2 className={style.heading} style={{fontFamily:'Yeseva One, cursive'}}>BUILD YOUR PERFECT BODY</h2>
-          <p className={style.para} style={{fontFamily:'Poppins, sans-serif'}}>Get a personalized workout program</p>
+          <h2 className={style.heading} style={{fontFamily:'Inter, sans-serif'}}>BUILD YOUR PERFECT BODY</h2>
+          <p className={style.para} style={{fontFamily:'Inter, sans-serif'}}>Get a personalized workout program</p>
         </div>
-        <div className={style.allow} style={{fontFamily:'Poppins, sans-serif'}}>
+        <div className={style.allow} style={{fontFamily:'Inter, sans-serif'}}>
           <div className={style.allow1}>
             <Switch
               bigger

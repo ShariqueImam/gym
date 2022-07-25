@@ -35,7 +35,7 @@ const Workouts = () => {
 
   return (
     <>
-      <ProgressBar scrollLength={"32%"} val={8} />
+      <ProgressBar scrollLength={"32%"} val={8} link="/loh"/>
 
       <Animator>
         <MainHeading text={"What sports are you interested in?"} />

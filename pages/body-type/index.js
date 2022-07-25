@@ -17,7 +17,7 @@ const BodyType = () => {
   };
   return (
     <>
-      <ProgessBar scrollLength={"8%"} val={2} />
+      <ProgessBar scrollLength={"8%"} val={2} link="/target-body"/>
       <Animator>
         <MainHeading text={"Choose your body type"} />
         <SmallHeading text="Choose the one that is most similar to yours now. There are no good or bad body types." />

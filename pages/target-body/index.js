@@ -17,7 +17,7 @@ const TargetBody = () => {
   }, []);
   return (
     <>
-      <ProgressBar scrollLength={"4%"} val={1} />
+      <ProgressBar scrollLength={"4%"} val={1} link="/"/>
       <Animator className={style.wrapper}>
         {handle === "Lose Weight" && <Lose />}
         {handle === "Gain Weight" && <Gain />}

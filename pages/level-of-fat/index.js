@@ -26,7 +26,7 @@ const LevelOfFat = () => {
   };
   return (
     <>
-      <ProgressBar scrollLength={"12%"} val={3} />
+      <ProgressBar scrollLength={"12%"} val={3} link="/body-type"/>
       <Animator>
         <div className={style.wrapper} style={{ fontFamily: "Inter,sans-serif" }}>
           <div className={style.left}>

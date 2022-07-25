@@ -17,7 +17,7 @@ const WorkoutPlace = () => {
   };
   return (
     <>
-      <ProgressBar scrollLength={"60%"} val={15} />
+      <ProgressBar scrollLength={"60%"} val={15} link="/pull-ups"/>
       <Animator>
         <MainHeading text="Choose the place for your workouts" />
         <div onClick={() => handleClick("Home")}>
